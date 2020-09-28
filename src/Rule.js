@@ -1,16 +1,41 @@
 import React from "react";
+import classnames from "classnames";
 
 class Rule extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      folded: !props.rule.description,
+    };
+  }
+
+  toggleDescription = () => {
+    this.setState((prevState) => ({
+      folded: !prevState.folded,
+    }));
+  };
+
   render() {
     const { rule } = this.props;
+    const { folded } = this.state;
 
     return (
       <div className="panel panel-primary">
-        <div className="panel-heading" role="presentation">
+        <div
+          className="panel-heading"
+          role="presentation"
+          onClick={this.toggleDescription}
+        >
           {rule.title}
-          <i className="pull-right glyphicon glyphicon-chevron-down"></i>
+          <i
+            className={classnames(
+              "pull-right glyphicon",
+              folded ? "glyphicon-chevron-down" : "glyphicon-chevron-up"
+            )}
+          ></i>
         </div>
-        <div className="panel-body">
+        <div className={classnames("panel-body", { hidden: folded })}>
           <p>{rule.description}</p>
         </div>
         <div className="panel-footer">
