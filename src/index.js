@@ -1,9 +1,15 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import { Provider } from "react-redux";
 
-import RuleList from "./RuleList";
+import appStore from "./appStore";
+import RuleListContainer from "./RuleListContainer";
 
-import data from "./data.json";
 import "bootstrap/dist/css/bootstrap.css";
 
-ReactDOM.render(<RuleList rules={data} />, document.getElementById("root"));
+ReactDOM.render(
+  <Provider store={appStore}>
+    <RuleListContainer />
+  </Provider>,
+  document.getElementById("root"),
+);

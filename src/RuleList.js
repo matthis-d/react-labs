@@ -1,7 +1,11 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Rule from "./Rule";
 
-function RuleList({ rules }) {
+function RuleList({ rules, loadRules }) {
+  useEffect(() => {
+    loadRules();
+  }, [loadRules]);
+
   return (
     <div>
       {rules.map((rule) => (
