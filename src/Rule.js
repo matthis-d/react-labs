@@ -30,7 +30,7 @@ function useToggle(initialValue) {
 
   return {
     folded,
-    toggle
+    toggle,
   };
 }
 
@@ -46,7 +46,7 @@ function Rule({ rule }) {
         <i
           className={classnames(
             "pull-right glyphicon",
-            folded ? "glyphicon-chevron-down" : "glyphicon-chevron-up"
+            folded ? "glyphicon-chevron-down" : "glyphicon-chevron-up",
           )}
         ></i>
       </div>

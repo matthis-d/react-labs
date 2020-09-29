@@ -21,12 +21,12 @@ function LikeButton({ initialCount, direction }) {
 
 LikeButton.propTypes = {
   direction: PropTypes.oneOf(["up", "down"]),
-  initialCount: PropTypes.number
+  initialCount: PropTypes.number,
 };
 
 LikeButton.defaultProps = {
   direction: "up",
-  initialCount: 0
+  initialCount: 0,
 };
 
 export default LikeButton;
