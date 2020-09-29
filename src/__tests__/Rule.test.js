@@ -22,7 +22,7 @@ describe("Rule", () => {
     fireEvent.click(screen.getByText("Write unit tests"));
 
     expect(
-      screen.getByText("This prevents from bugs in production"),
-    ).not.toBeVisible();
+      screen.queryByText("This prevents from bugs in production"),
+    ).not.toBeInTheDocument();
   });
 });
