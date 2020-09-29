@@ -1,18 +1,20 @@
 import React from "react";
 import classnames from "classnames";
 
+import LikeButton from "./LikeButton";
+
 class Rule extends React.Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      folded: !props.rule.description,
+      folded: !props.rule.description
     };
   }
 
   toggleDescription = () => {
     this.setState((prevState) => ({
-      folded: !prevState.folded,
+      folded: !prevState.folded
     }));
   };
 
@@ -52,13 +54,8 @@ class Rule extends React.Component {
               </a>
             </div>
             <div className="btn-group btn-group-xs pull-right">
-              <a className="btn btn-default" title="+1">
-                {rule.likes} <i className="glyphicon glyphicon-thumbs-up"></i>
-              </a>
-              <a className="btn btn-default" title="-1">
-                {rule.dislikes}{" "}
-                <i className="glyphicon glyphicon-thumbs-down"></i>
-              </a>
+              <LikeButton initialCount={rule.likes} />
+              <LikeButton direction="down" initialCount={rule.dislikes} />
             </div>
           </div>
         </div>

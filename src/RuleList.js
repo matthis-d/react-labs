@@ -12,7 +12,7 @@ function RuleList({ rules }) {
 }
 
 RuleList.defaultProps = {
-  rules: [],
+  rules: []
 };
 
 export default RuleList;
