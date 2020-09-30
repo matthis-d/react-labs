@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import classnames from "classnames";
 
 import LikeButton from "./LikeButton";
+import LikeButtonContainer from "./LikeButtonContainer";
 
 class RuleDescription extends React.Component {
   render() {
@@ -65,8 +66,8 @@ function Rule({ rule }) {
             </a>
           </div>
           <div className="btn-group btn-group-xs pull-right">
-            <LikeButton initialCount={rule.likes} />
-            <LikeButton direction="down" initialCount={rule.dislikes} />
+            <LikeButtonContainer ruleId={rule.id} direction="up" />
+            <LikeButtonContainer ruleId={rule.id} direction="down" />
           </div>
         </div>
       </div>

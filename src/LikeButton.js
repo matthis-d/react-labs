@@ -1,18 +1,12 @@
-import React, { useState } from "react";
+import React from "react";
 import PropTypes from "prop-types";
 
-function LikeButton({ initialCount, direction }) {
-  const [count, setCount] = useState(initialCount);
-
-  const increment = () => {
-    setCount((prevCount) => prevCount + 1);
-  };
-
+function LikeButton({ count, onClick, direction }) {
   return (
     <button
       className="btn btn-default"
       title={direction === "up" ? "+1" : "-1"}
-      onClick={increment}
+      onClick={onClick}
     >
       {count} <i className={`glyphicon glyphicon-thumbs-${direction}`}></i>
     </button>
